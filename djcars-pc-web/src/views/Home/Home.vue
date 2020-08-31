@@ -1,9 +1,3 @@
-<!--
- * @Author: YJ
- * @Date: 2020-08-11 16:33:25
- * @
-# Description: 
--->
 <template>
   <div class="home">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -29,7 +23,7 @@ export default {
     }
   },
   created(){
-    console.log(this.$require)
+    console.log(this)
   }
 }
 </script>
