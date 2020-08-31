@@ -8,6 +8,9 @@
   <div class="home">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <div>hello world</div>
+    <div class="headerDom">
+      <div class="title">上山</div>
+    </div>
   </div>
 </template>
 
@@ -30,3 +33,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+    .headerDom{
+       .title{
+         color: red;
+       }
+    }
+</style>
