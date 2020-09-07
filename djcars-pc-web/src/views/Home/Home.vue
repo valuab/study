@@ -1,37 +1,31 @@
+<!--
+ * @Author: YJ
+ * @Date: 2020-08-31 14:33:32
+ * @
+# Description: 
+-->
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <div>hello world</div>
-    <div class="headerDom">
-      <div class="title">上山</div>
-    </div>
+
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'Home',
   components: {
-    HelloWorld
   },
   data(){
     return{
-      msg:'home'
+      
     }
   },
   created(){
-    console.log(this)
+
   }
 }
 </script>
 
 <style lang="scss" scoped>
-    .headerDom{
-       .title{
-         color: red;
-       }
-    }
+
 </style>

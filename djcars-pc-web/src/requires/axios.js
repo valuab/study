@@ -5,9 +5,13 @@
 # Description: 
  */
 import axios from 'axios'
+import {head,api} from './api'
 
 const require = {}
-const head = 'ttp://wxapi-beta.djcars.cn'
+
+// 接口目录
+require.api = api
+
 // get 请求
 /**
  * @name: 

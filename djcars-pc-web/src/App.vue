@@ -1,32 +1,38 @@
+<!--
+ * @Author: YJ
+ * @Date: 2020-08-31 13:18:08
+ * @
+# Description: 
+-->
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="isApp" v-if="isApp">
+      <router-view />
     </div>
-    <router-view/>
+    <div v-if="!isApp">
+      <Header />
+      <router-view />
+    </div>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<script>
+import Header from "./components/Public/Header";
+export default {
+  name: "App",
+  components: {
+    Header,
+  },
+  data() {
+    return {
+      isApp: false,//默认pc端
+    };
+  },
+  created(){
+    console.log(navigator.userAgent)
+    if(/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)){
+      this.data.isApp = true
+    }
+  }
+};
+</script>

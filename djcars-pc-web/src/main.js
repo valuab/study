@@ -12,6 +12,9 @@ import router from './router' //router 插件
 // 引入请求模块
 import axios from './requires/axios'
 
+// 引入全局样式
+import './assets/css/reset.scss'
+
 const app = createApp(App)
 
 // 注册全局自定义指令 `v-focus`
