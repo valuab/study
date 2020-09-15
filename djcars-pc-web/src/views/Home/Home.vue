@@ -6,26 +6,24 @@
 -->
 <template>
   <div class="home">
-
+    <Banner/>
   </div>
 </template>
 
 <script>
+// components
+import Banner from "../../components/Home/Banner.vue";
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
+    Banner,
   },
-  data(){
-    return{
-      
-    }
+  data() {
+    return {};
   },
-  created(){
-
-  }
-}
+  created() {},
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

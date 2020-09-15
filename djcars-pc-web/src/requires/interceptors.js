@@ -8,6 +8,7 @@ import axios from 'axios'
 
 // 发送请求
 axios.interceptors.request.use(function (config){
+    console.log(config)
     consfig.headers.sessinId = getToken()
     return config
 },function(error){
@@ -16,7 +17,7 @@ axios.interceptors.request.use(function (config){
 
 // 处理响应
 axios.interceptors.response.use(function (response){
-
+    console.log(response)
     return response
 },function(error){
     return Promise.reject(error)
