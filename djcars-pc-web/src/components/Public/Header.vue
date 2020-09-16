@@ -5,8 +5,10 @@
 # Description: 
 -->
 <template>
-  <div class="header">
-    <div class="center-body"></div>
+  <div class="headerBody">
+    <div class="header">
+      <div class="center-body"></div>
+    </div>
   </div>
 </template>
 
@@ -35,5 +37,10 @@ export default {
     width: 1204px;
     margin: 0 auto;
   }
+}
+
+.headerBody {
+  width: 100%;
+  height: 72px;
 }
 </style>
