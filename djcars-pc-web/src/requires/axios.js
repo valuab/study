@@ -4,9 +4,8 @@
  * @
 # Description: 
  */
-import axios from 'axios'
-import {head,api} from './api'
-
+import axios from './interceptors'
+import api from './api.js'
 const require = {}
 
 // 接口目录
@@ -15,14 +14,17 @@ require.api = api
 // get 请求
 /**
  * @name: 
- * @param {string} link 链接
+ * @param {string} url 链接
  * @param {object} params 参数
  * @return {type} 
  */
-require.get = (link,params)=>{
-    link = head + link
-    axios.get(link,params).then(Response=>{
-        return Response
+require.get = (url,params)=>{
+    return axios({
+        method:'get',
+        url,
+        params
+    }).then(Response=>{
+        return Response.data
     }).catch(error=>{
         return error
     })
@@ -37,9 +39,13 @@ require.get = (link,params)=>{
  * @return {type} 
  */
 require.post = (link,params)=>{
-    link = head + link
-    axios.post(link,params).then(Response=>{
-        return Response
+    return axios({
+        method:'post',
+        url,
+        params,
+        timeout: 10000,
+    }).then(Response=>{
+        return Response.data
     }).catch(error=>{
         return error
     })

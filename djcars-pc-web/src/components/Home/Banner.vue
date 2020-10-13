@@ -23,20 +23,48 @@ export default {
     },
     created(){
         // 获取轮播图设置
-        this.getBannerList()
+        this.getData()
     },
     methods:{
         /**
-         * @name: getBannerList
-         * @msg: 获取海报封面
-         * @param {type} 
-         * @return {type} 
+         * @name: getData
+         * @msg: 获取所需数据
          */
-        async getBannerList(){
-            const api = this.$axios.api.link.home.getNewPostList.url
+        async getData(){
+          this.getKolList()
+          this.getColumnCategoryList()
+        },
+        /**
+         * @name: getKolList
+         * @msg: 获取海报封面
+         */
+        async getKolList(){
+            // const api = this.$axios.api.link.home.getNewPostList.url
+            const api = this.$axios.api.link.home.getKolList.url
             console.log(api)
-            this.$axios.get(api)
-        }
+            let data = {
+              // categoryId:6
+            }
+            this.$axios.get(api,data).then(res=>{
+              console.log(res)
+            })
+        },
+        /**
+         * @name: getColumnCategoryList
+         * @msg: 获取栏目列表
+         */
+        async getColumnCategoryList(){
+            // const api = this.$axios.api.link.home.getNewPostList.url
+            const api = this.$axios.api.link.home.getColumnCategoryList.url
+            console.log(api)
+            let data = {
+              categoryId:6
+            }
+            this.$axios.get(api,data).then(res=>{
+              console.log(res)
+            })
+        },
+
     }
 }
 </script>

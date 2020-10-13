@@ -14,15 +14,19 @@ module.exports = {
     lintOnSave: false, // 是否开启eslint保存检测,有效值（true||false||error)
     devServer: {
         open: true, // 有效值（true||false) npm run serve后,是否打开浏览器
-        host: 'localhost', // 配置端口号
-        port: 8080,
+        // host: 'localhost', // 配置端口号
+        host: '127.0.0.1',
+        port: 8000,
         https: false, // 有效值(true||false)
         hotOnly: true, // 热更新
+        compress: true,
+        disableHostCheck: true, //webpack4.0 开启热更新
         proxy: {
             // 配置跨域
             '/api': {
-                target: 'http://localhost:8080/',
-                ws: false, // 是否跨域
+                // target: 'http://localhost:8080/',
+                target: 'http://djcars.cn',// 正式服务器地址
+                ws: true, // 是否跨域
                 changeOrigin: true,
                 // 重写地址
                 pathRewrite: {

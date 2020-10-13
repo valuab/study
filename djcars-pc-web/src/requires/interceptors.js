@@ -5,13 +5,13 @@
 # Description: 配置拦截器
  */
 import axios from 'axios'
-
 // 发送请求
 axios.interceptors.request.use(function (config){
     console.log(config)
-    consfig.headers.sessinId = getToken()
+    config.headers = getToken()
     return config
 },function(error){
+    console.log(error)
     return Promise.reject(error)
 })
 
@@ -20,5 +20,14 @@ axios.interceptors.response.use(function (response){
     console.log(response)
     return response
 },function(error){
+    console.log(error)
     return Promise.reject(error)
 })
+
+function getToken(){
+    return {
+
+    }
+}
+
+export default axios
