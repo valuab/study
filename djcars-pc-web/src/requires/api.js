@@ -33,7 +33,7 @@ api.link.home = {
     },
     getNewPostList: {
         url: `${head}/index/getNewPostList`,
-        text: '获取最新发布列表'
+        text: '首页banner数据'
     },
     getHistoryPostList: {
         url: `${head}/index/getHistoryPostList`,

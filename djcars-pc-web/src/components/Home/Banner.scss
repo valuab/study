@@ -1,12 +1,20 @@
 .banner {
-    width: 10000px;
+    width: 894px;
+    height: 894px/16*9;
+    overflow-x: hidden;
     display: flex;
+    position: relative;
 }
 
-.poster {
-    position: relative;
+.anchor{
+    position: absolute;
+    width: calc(894px * 5);
+}
+
+.poster{
     width: 894px;
     height: 894px/16*9;
     border-radius: 4px;
     overflow: hidden;
+    float: left;
 }
