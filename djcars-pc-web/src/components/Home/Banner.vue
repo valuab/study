@@ -6,7 +6,8 @@
 -->
 <template>
   <div class="banner">
-    <div class="anchor" ref="anchor">
+    <!-- 图片 -->
+    <div class="anchor" ref="anchors">
       <img
         v-for="item in bannerList"
         :key="item.id"
@@ -15,6 +16,17 @@
         srcset
         class="poster"
       />
+    </div>
+    <!-- 文字 -->
+    <div class="anchorText">
+      <div class="title" ref="title">
+        <div class="text"  v-for="(item) in bannerList" :key="item.id" :class="(index === i?'moveIndex':'')">
+          {{ item.title }}
+        </div>
+      </div>
+      <div class="tab">
+        <div v-for="(item) in bannerList" :key="item.id" :class="(index === i?'moveIndex':'')"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -34,8 +46,7 @@ export default {
     this.getData();
   },
   update() {
-    console.log('update')
-    this.autoLoop();
+    console.log("update");
   },
   methods: {
     /**
@@ -51,33 +62,51 @@ export default {
      */
     async getBannerList() {
       const link = this.$axios.api.link.home.getNewPostList.url;
-      this.$axios.get(link).then((res) => {
+      return this.$axios.get(link).then((res) => {
         let { list } = res.result;
         list[list.length] = list[0];
         this.bannerList = this.bannerList.concat(list);
+        this.autoLoop();
       });
     },
 
+    // 轮播
     autoLoop() {
-      this.$nextTick(() => {
-        setInterval(() => {
-          this.$refs.anchor.style.left = -894 * this.index + "px";
-          this.$refs.anchor.style.transition = "all 0.5s linear";
-          this.index++;
-
-          if (parseInt(this.$refs.anchor.style.left) <= -894 * 4) {
-            setTimeout(() => {
-              //这个setTimeout是因为left=-600px，transition有0.5s执行动画，需要等它执行完成后，再设置left=0，
-              //否则，直接跳到left=0,动画生硬，
-              this.$refs.anchor.style.left = 0 + "px";
-              this.$refs.anchor.style.transition = "all 0s linear";
-              this.index = 1;
-            }, 500);
-          }
-        }, 3000);
-      });
+      setInterval(() => {
+        this.autoLoopImg();
+        this.autoLoopText();
+        this.index++;
+      }, 3000);
     },
+    // 图片轮播
+    autoLoopImg() {
+      this.$refs.anchors.style.transition = "all 0.5s linear";
+      this.$refs.anchors.style.left = -894 * this.index + "px";
 
+      if (parseInt(this.$refs.anchors.style.left) <= -894 * 4) {
+        setTimeout(() => {
+          //这个setTimeout是因为left=-600px，transition有0.5s执行动画，需要等它执行完成后，再设置left=0，
+          //否则，直接跳到left=0,动画生硬，
+          this.$refs.anchors.style.left = 0 + "px";
+          this.$refs.anchors.style.transition = "all 0s linear";
+          this.index = 1;
+        }, 500);
+      }
+    },
+    // 文字轮播
+    autoLoopText() {
+      this.$refs.title.style.transition = "all 0.5s linear";
+      this.$refs.title.style.top = -75 * this.index + "px";
+
+      if (parseInt(this.$refs.title.style.top) <= -75 * 4) {
+        setTimeout(() => {
+          //这个setTimeout是因为left=-600px，transition有0.5s执行动画，需要等它执行完成后，再设置left=0，
+          //否则，直接跳到left=0,动画生硬，
+          this.$refs.title.style.top = 0 + "px";
+          this.$refs.title.style.transition = "all 0s linear";
+        }, 500);
+      }
+    },
     /**
      * @name: getKolList
      * @msg: 获取海报封面
@@ -111,5 +140,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped />

@@ -14,6 +14,7 @@ import axios from './requires/axios'
 
 // 引入全局样式
 import './assets/css/reset.scss'
+import './assets/css/app.scss'
 
 const app = createApp(App)
 

@@ -6,15 +6,65 @@
     position: relative;
 }
 
-.anchor{
+.anchor {
     position: absolute;
     width: calc(894px * 5);
+    left: 0;
 }
 
-.poster{
+.poster {
     width: 894px;
     height: 894px/16*9;
     border-radius: 4px;
     overflow: hidden;
     float: left;
+}
+
+.anchorText {
+    width: 100%;
+    height: 75px;
+    overflow: hidden;
+
+    position: absolute;
+    bottom: 0px;
+    z-index: 5;
+    background-color: rgba(#000, .6);
+
+    padding: 0 28px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    .title {
+        position: absolute;
+        top: 0;
+        height: calc(75px * 5);
+    }
+
+    .text {
+        font-size: 30px;
+        font-weight: bold;
+        color: #ffffff;
+        line-height: 75px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .tab {
+        width: 100%;
+        height: 6px;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        z-index: 6;
+
+        &>div{
+            width: 25%;
+            height: 6px;
+        }
+
+        .moveIndex{
+            // background: $themeColor;
+        }
+    }
 }
