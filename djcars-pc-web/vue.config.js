@@ -7,6 +7,11 @@
 //vue.config.js
 // const data = require('数据路径')
 
+const path = require('path')
+const {
+    config
+} = require('process')
+
 module.exports = {
     publicPath: '/', // 根路径
     outputDir: 'dist', // 构建输出目录
@@ -25,7 +30,7 @@ module.exports = {
             // 配置跨域
             '/api': {
                 // target: 'http://localhost:8080/',
-                target: 'http://djcars.cn',// 正式服务器地址
+                target: 'http://djcars.cn', // 正式服务器地址
                 ws: true, // 是否跨域
                 changeOrigin: true,
                 // 重写地址
@@ -35,6 +40,16 @@ module.exports = {
             }
         }
     },
+
+    // pluginOptions: {
+    //     "sass-resources-loader": {
+    //         // 'preProcessor': 'scss',
+    //         'patterns': [
+    //             path.resolve(__dirname, './src/assets/css/*.scss'),
+    //         ]
+    //     }
+    // },
+
     // 在服务内部的所有其他中间件之前， 提供执行自定义中间件的功能。 这可以用来配置自定义处理程序
     // before(app) {
     //     //   加载本地数据

@@ -7,12 +7,14 @@
 <template>
   <div class="home">
     <Banner/>
+    <Selected/>
   </div>
 </template>
 
 <script>
 // components
 import Banner from "../../components/Home/Banner.vue";
+import Selected from "../../components/Home/Selected.vue";
 export default {
   name: "Home",
   components: {
