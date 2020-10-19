@@ -7,11 +7,6 @@
 //vue.config.js
 // const data = require('数据路径')
 
-const path = require('path')
-const {
-    config
-} = require('process')
-
 module.exports = {
     publicPath: '/', // 根路径
     outputDir: 'dist', // 构建输出目录

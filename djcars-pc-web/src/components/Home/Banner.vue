@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import "./Banner.scss";
 export default {
   name: "Banner",
   data() {
@@ -57,14 +56,14 @@ export default {
       await this.getBannerList();
     },
     /**
-     * @name:
-     * @msg:
+     * @name:getBannerList
+     * @msg: 获取海报列表数据
      */
     async getBannerList() {
       const link = this.$axios.api.link.home.getNewPostList.url;
       return this.$axios.get(link).then((res) => {
         let { list } = res.result;
-        list[list.length] = list[0];
+        list[list.length] = list[0];//作为动画过渡
         this.bannerList = this.bannerList.concat(list);
         this.autoLoop();
       });
@@ -140,4 +139,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped />
+<style lang="scss" scoped>
+@import './Banner.scss';
+</style>

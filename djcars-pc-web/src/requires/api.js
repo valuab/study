@@ -15,6 +15,15 @@ api.link = {}
  */
 
 api.link.home = {
+    getNewPostList: {
+        url: `${head}/index/getNewPostList`,
+        text: '首页banner数据'
+    },
+    getSelectColumnContentList: {
+        url: `${head}/index/getSelectColumnContentList`,
+        text: '精选栏目'
+    },
+
     getAdList: {
         url: `${head}/index/getAdList`,
         text: '获取横幅广告列表'
@@ -31,10 +40,7 @@ api.link.home = {
         url: `${head}/index/getColumnCategoryList`,
         text: '获取栏目列表'
     },
-    getNewPostList: {
-        url: `${head}/index/getNewPostList`,
-        text: '首页banner数据'
-    },
+    
     getHistoryPostList: {
         url: `${head}/index/getHistoryPostList`,
         text: '获取往期精彩列表'

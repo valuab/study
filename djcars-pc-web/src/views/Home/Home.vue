@@ -19,6 +19,7 @@ export default {
   name: "Home",
   components: {
     Banner,
+    Selected
   },
   data() {
     return {};

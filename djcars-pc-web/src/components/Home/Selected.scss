@@ -1,0 +1,50 @@
+.title {
+    width: 888px;
+    height: 30px;
+    margin: 21px 0;
+    border-left: 6px solid #ff8022;
+    line-height: 30px;
+    padding-left: 14px;
+}
+
+.home_title {
+    font-size: 1.5rem;
+    float: left;
+}
+
+.title_guide {
+    font-size: 1rem;
+    float: right;
+    color: #ff8022;
+}
+
+.template {
+    width: 894px;
+    height: 400px;
+    display: flex;
+}
+
+.column:first-child {
+    margin-right: 24px;
+}
+
+.column {
+    flex: 1;
+    height: 400px;
+    position: relative;
+
+    &>img {
+        display: block;
+        height: 56.25%;
+        width: 100%;
+        position: relative;
+        border-radius: 4px 4px 0 0;
+        position: relative;
+    }
+
+    .table{
+        &>img{
+
+        }
+    }
+}
