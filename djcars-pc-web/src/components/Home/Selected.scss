@@ -1,4 +1,8 @@
-.title {
+.Selected {
+    background-color: #fff;
+}
+
+.home_title {
     width: 888px;
     height: 30px;
     margin: 21px 0;
@@ -7,7 +11,7 @@
     padding-left: 14px;
 }
 
-.home_title {
+.title_name {
     font-size: 1.5rem;
     float: left;
 }
@@ -26,25 +30,107 @@
 
 .column:first-child {
     margin-right: 24px;
+    border: 1PX solid #ebebeb;
+    box-sizing: border-box;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+
+    .article_article {
+        padding: 0 24PX;
+        margin-top: 20PX;
+        font-size: 14PX;
+        color: #bdbdbd;
+        line-height: 24PX;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
 }
 
 .column {
     flex: 1;
     height: 400px;
     position: relative;
+    flex-wrap: wrap;
+    display: flex;
 
     &>img {
         display: block;
         height: 56.25%;
         width: 100%;
-        position: relative;
-        border-radius: 4px 4px 0 0;
-        position: relative;
     }
 
-    .table{
-        &>img{
+    &>.article_tag {
+        height: 28PX;
+        margin-bottom: 16PX;
+        line-height: 28PX;
+        padding: 0 10PX;
+        font-size: 14PX;
+        position: absolute;
+        left: 0;
+        top: 6px;
+        z-index: 8;
+        background-color: #ff6e00;
+        color: #fff;
+    }
 
+    .article_title {
+        padding: 0 24PX;
+        font-size: 18PX;
+        color: #212121;
+        line-height: 30PX;
+    }
+
+    &>.table {
+        width: calc(50% - 12px);
+        position: relative;
+        border-radius: 4px 4px 0 0;
+        overflow: hidden;
+        border: 1PX solid #ebebeb;
+        box-sizing: border-box;
+
+        &>.article_tag {
+            height: 28PX;
+            margin-bottom: 16PX;
+            line-height: 28PX;
+            padding: 0 10PX;
+            font-size: 14PX;
+            position: absolute;
+            left: 0;
+            top: 6px;
+            z-index: 8;
+            background-color: #ff6e00;
+            color: #fff;
         }
+
+        .article_title {
+            margin-top: 18PX;
+            padding: 0 12PX;
+            font-size: 14PX;
+            color: #212121;
+            line-height: 20PX;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+
+            &:hover {
+                //   color: $themeColor;
+            }
+        }
+    }
+
+    .table:nth-child(1) {
+        margin-right: 24px;
+        margin-bottom: 24px;
+    }
+
+    .table:nth-child(2) {
+        margin-bottom: 24px;
+    }
+
+    .table:nth-child(3) {
+        margin-right: 24px;
     }
 }

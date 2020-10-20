@@ -1,0 +1,54 @@
+.home_title {
+    width: 888px;
+    height: 30px;
+    margin: 21px 0;
+    border-left: 6px solid #ff8022;
+    line-height: 30px;
+    padding-left: 14px;
+}
+
+.title_name {
+    font-size: 1.5rem;
+    float: left;
+}
+
+.title_guide {
+    font-size: 1rem;
+    float: right;
+    color: #ff8022;
+}
+
+.list {
+    display: flex;
+    width: 100%;
+    height: 410px;
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+
+.item {
+    width: 282PX;
+    height: 410PX;
+    display: block;
+    margin-right: 24px;
+    position: relative;
+
+    &>.bg {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 100PX 16PX 16PX;
+        overflow: hidden;
+
+        height: 220PX;
+        transform: skewY(-5deg) translateY(-34PX);
+        background-color: rgba(#0d0d0d, .85);
+    }
+
+    &:hover {
+        .item-textBox {
+            transform: translateY(0);
+        }
+    }
+}
