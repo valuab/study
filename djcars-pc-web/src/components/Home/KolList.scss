@@ -1,3 +1,7 @@
+.KolList {
+    width: inherit;
+}
+
 .home_title {
     width: 888px;
     height: 30px;
@@ -18,11 +22,20 @@
     color: #ff8022;
 }
 
-.list {
-    display: flex;
-    width: 100%;
+.limit {
+    width: 894px;
     height: 410px;
     overflow: hidden;
+    position: relative;
+}
+
+
+
+.list {
+    position: absolute;
+    top: 0;
+    left:0;
+    display: flex;
     flex-wrap: nowrap;
 }
 
@@ -33,22 +46,92 @@
     margin-right: 24px;
     position: relative;
 
-    &>.bg {
+    &>.msg {
         position: absolute;
         left: 0;
         right: 0;
         bottom: 0;
         padding: 100PX 16PX 16PX;
         overflow: hidden;
+        transform: translateY(38PX);
+        transition: transform 0.35s;
 
-        height: 220PX;
-        transform: skewY(-5deg) translateY(-34PX);
-        background-color: rgba(#0d0d0d, .85);
+        .bg {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 220PX;
+            transform: skewY(-5deg) translateY(-34PX);
+            background-color: rgba(#0d0d0d, .85);
+        }
+    }
+
+    &-text1 {
+        position: relative;
+        z-index: 1;
+        padding-left: 11PX;
+        font-size: 20PX;
+        line-height: 20PX;
+        color: $themeColor;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 3PX;
+            height: 16PX;
+            margin-top: 2PX;
+            background-color: $themeColor;
+        }
+    }
+
+    &-text2,
+    &-text3 {
+        position: relative;
+        z-index: 1;
+        font-size: 14PX;
+        line-height: 14PX;
+        color: rgba(#fff, 0.64);
+    }
+
+    &-text2 {
+        margin-top: 12PX;
+        line-height: 20PX;
+    }
+
+    &-text3 {
+        margin-top: 24PX;
     }
 
     &:hover {
-        .item-textBox {
-            transform: translateY(0);
+        .msg {
+            transform: translateY(0PX);
         }
     }
 }
+
+.item:last-of-type {
+    margin-right: 0;
+}
+
+//左右
+.left{
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    top:50%;
+    left: 0;
+    margin-top: -28px;
+    //background-position: center center;
+    background-size: 100% 100%;
+  }
+  
+  .right{
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    top:50%;
+    right: 0;
+    margin-top: -28px;
+    background-size: 100% 100%;
+  }

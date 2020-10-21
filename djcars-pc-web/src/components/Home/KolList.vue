@@ -10,17 +10,23 @@
         <div class="title_name">精选节目</div>
         <a class="title_guide"> 更多 ></a>
     </div>
-    <div class="list">
-        <a href="" class="item" v-for="item in kolList" :key="item.id">
-            <img :src="item.imageUrl" class="kol" alt="" />
-            <div class="bg">
-                <div class="item-textBox-text1">{{ item.nickname }}</div>
-                <div class="item-textBox-text2">{{ item.introduction }}</div>
-                <div class="item-textBox-text3">
-                    {{ item.cylOtherCount }}图文·{{ item.cylVideoCount }}视频
+
+    <div class="limit">
+        <div class="list" ref="kol">
+            <a href="" class="item" v-for="item in kolList" :key="item.id">
+                <img :src="item.imageUrl" class="kol" alt="" />
+                <div class="msg">
+                    <div class="bg" />
+                    <div class="item-text1">{{ item.nickname }}</div>
+                    <div class="item-text2">{{ item.introduction }}</div>
+                    <div class="item-text3">
+                        {{ item.cylOtherCount }}图文·{{ item.cylVideoCount }}视频
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        </div>
+        <div class="left" :class="page === 1?'img-person-kol-left':'img-person-kol-left1'"></div>
+        <div class="right" :class="page === 1?'img-person-kol-right1':'img-person-kol-right'"></div>
     </div>
 </div>
 </template>
@@ -31,6 +37,7 @@ export default {
     data() {
         return {
             kolList: new Object(),
+            page: 1
         };
     },
     created() {

@@ -6,12 +6,12 @@
 -->
 <template>
 <div class="home">
-    <div class="left">
+    <div class="home_left">
         <Banner />
         <Selected @contentIds="contentIds" />
         <KolList />
     </div>
-    <div class="right"></div>
+    <div class="home_right"></div>
 </div>
 </template>
 
@@ -29,35 +29,36 @@ export default {
     },
     data() {
         return {
-            excludeContentIds: new Object()
+            excludeContentIds: new Object(),
         };
     },
     created() {},
     methods: {
         /**
-         * @name: 
+         * @name:
          * @msg: 传递精选id
          */
         contentIds(val) {
-            this.excludeContentIds = val
-        }
+            this.excludeContentIds = val;
+        },
     },
 };
 </script>
 
 <style lang="scss" scoped>
 .home {
-    width: 100%;
-    background: #FFFFFF;
+    max-width: 1200px;
+    background: #ffffff;
     display: flex;
 
-    .left {
+    .home_left {
         flex: 1;
         margin-right: 24px;
     }
 
-    .right {
+    .home_right {
         width: 282px;
+        height: 100px;
     }
 }
 </style>

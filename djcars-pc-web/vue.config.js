@@ -36,6 +36,14 @@ module.exports = {
         }
     },
 
+    css: {
+        loaderOptions: {
+            sass: {
+                additionalData:  `@import "~@/assets/css/app.scss";@import "~@/assets/css/reset.scss";`,//每个sass文件插入该引入
+            }
+        }
+    }
+
     // pluginOptions: {
     //     "sass-resources-loader": {
     //         // 'preProcessor': 'scss',
