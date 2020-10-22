@@ -56,7 +56,6 @@ export default {
         getData() {
             const link = this.$axios.api.link.home.getSelectColumnContentList.url;
             return this.$axios.get(link).then((res) => {
-                console.log(res)
                 let {
                     list,
                     excludeContentIds

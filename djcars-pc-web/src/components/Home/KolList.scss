@@ -110,6 +110,10 @@
     }
 }
 
+.item:nth-child(3n){
+    margin-right: 0;
+}
+
 .item:last-of-type {
     margin-right: 0;
 }

@@ -25,8 +25,8 @@
                 </div>
             </a>
         </div>
-        <div class="left" :class="page === 1?'img-person-kol-left':'img-person-kol-left1'"></div>
-        <div class="right" :class="page === 1?'img-person-kol-right1':'img-person-kol-right'"></div>
+        <div class="left" :class="page === 0 ? 'img-person-kol-left' : 'img-person-kol-left1'" @click="prev"></div>
+        <div class="right" :class="page === (this.maxPage - 1) ? 'img-person-kol-right' : 'img-person-kol-right1'" @click="next"></div>
     </div>
 </div>
 </template>
@@ -37,7 +37,8 @@ export default {
     data() {
         return {
             kolList: new Object(),
-            page: 1
+            page: 0,
+            maxPage: 0,
         };
     },
     created() {
@@ -62,7 +63,20 @@ export default {
                     list
                 } = res.result;
                 this.kolList = list;
+
+                this.maxPage = Math.ceil(list.length / 3)
             });
+        },
+
+        prev() {
+            if (this.page <= 0) return
+            this.page--
+            this.$refs.kol.style.left = this.page * -894 + 'px'
+        },
+        next() {
+            if (this.page >= this.maxPage - 1) return
+            this.page++
+            this.$refs.kol.style.left = this.page * -894 + 'px'
         },
     },
 };
