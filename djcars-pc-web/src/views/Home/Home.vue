@@ -9,7 +9,8 @@
     <div class="home_left">
         <Banner />
         <Selected @contentIds="contentIds" />
-        <KolList />
+        <KolList @url="url" @param="param" />
+        <articleList />
     </div>
     <div class="home_right"></div>
 </div>
@@ -17,19 +18,23 @@
 
 <script>
 // components
-import Banner from "../../components/Home/Banner.vue";
-import Selected from "../../components/Home/Selected.vue";
-import KolList from "../../components/Home/KolList.vue";
+import Banner from "@/components/Home/Banner.vue";
+import Selected from "@/components/Home/Selected.vue";
+import KolList from "@/components/Home/KolList.vue";
+import articleList from "@/components/articleList/articleList.vue";
 export default {
     name: "Home",
     components: {
         Banner,
         Selected,
         KolList,
+        articleList,
     },
     data() {
         return {
             excludeContentIds: new Object(),
+            url: this.$axios.api.link.home.getHistoryPostList.url,
+            cases: ['ALL', 'IMAGES', 'VIDEO']
         };
     },
     created() {},
@@ -40,6 +45,9 @@ export default {
          */
         contentIds(val) {
             this.excludeContentIds = val;
+            this.param = {
+
+            }
         },
     },
 };

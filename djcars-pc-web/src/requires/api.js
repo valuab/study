@@ -23,6 +23,14 @@ api.link.home = {
         url: `${head}/index/getSelectColumnContentList`,
         text: '精选栏目'
     },
+    getKolList: {
+        url: `${head}/index/getKolList`,
+        text: '获取大咖'
+    },
+    getHistoryPostList: {
+        url: `${head}/index/getHistoryPostList`,
+        text: '获取往期精彩列表'
+    },
 
     getAdList: {
         url: `${head}/index/getAdList`,
@@ -32,18 +40,10 @@ api.link.home = {
         url: `${head}/index/getSpecialList`,
         text: '获取特色栏目列表'
     },
-    getKolList: {
-        url: `${head}/index/getKolList`,
-        text: '获取特色栏目列表'
-    },
+    
     getColumnCategoryList: {
         url: `${head}/index/getColumnCategoryList`,
         text: '获取栏目列表'
-    },
-    
-    getHistoryPostList: {
-        url: `${head}/index/getHistoryPostList`,
-        text: '获取往期精彩列表'
     },
     searchHotKeyWordList: {
         url: `${head}/index/searchHotKeyWordList`,
