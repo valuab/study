@@ -6,34 +6,34 @@
 -->
 <template>
 <div class="articleList">
-    <div class="list">
-
-    </div>
+    <div class="list"></div>
 </div>
 </template>
 
 <script>
 export default {
-    name: 'articleList',
-    props: {
-        url: String, //列表数据链接
-        param: Object,
-    },
+    name: "articleList",
+    props: ['url', 'param'],
     data() {
         return {
             page: 0, //加载页码
-        }
+            URL: this.url,
+            PARAM: this.param,
+        };
+    },
+    created() {
+
     },
     methods: {
         /**
          * @name: getData
          * @msg: 获取所需数据
          */
-        getData() {}
+        getData() {},
     },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import "./articleList.scss"
+@import "./articleList.scss";
 </style>
