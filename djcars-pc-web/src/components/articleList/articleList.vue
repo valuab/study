@@ -6,30 +6,46 @@
 -->
 <template>
 <div class="articleList">
-    <div class="list"></div>
+    <div class="list" v-for="item in articleList" :key="item.id">
+        <div class="img">
+            <img :src="item.imageUrl" alt="" srcset="">
+            <div class="link">{{item.columnContentDtoList[item.columnContentDtoList.lenght - 1].description}}</div>
+        </div>
+        <div class="msg"></div>
+    </div>
 </div>
 </template>
 
 <script>
 export default {
     name: "articleList",
-    props: ['url', 'param'],
+    props: ["url", "param"],
     data() {
         return {
             page: 0, //加载页码
             URL: this.url,
             PARAM: this.param,
+            articleList: new Array(),
         };
     },
     created() {
-
+        this.getData();
     },
     methods: {
         /**
          * @name: getData
          * @msg: 获取所需数据
          */
-        getData() {},
+        getData() {
+            this.page++
+            this.PARAM.page = this.page
+            this.$axios.get(this.URL, this.PARAM).then((res) => {
+                let {
+                    list
+                } = res.result;
+                this.articleList = this.articleList.concat(list);
+            });
+        },
     },
 };
 </script>

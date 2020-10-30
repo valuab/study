@@ -6,7 +6,7 @@
 -->
 <template lang="">
 <div class='nav'>
-    <div v-for="(item,index) in navList" :key="index" @click='nav(index)'>{{item}}</div>
+    <div v-for="(item,i) in navList" :key="i" :class='index === i?"choice":""' @click='nav(i)'>{{item}}</div>
 </div>
 </template>
 
@@ -17,6 +17,7 @@ export default {
     data() {
         return {
             navList: this.tagList,
+            index: 0
         };
     },
     methods: {
@@ -27,6 +28,8 @@ export default {
          * @return {*}
          */
         nav(index) {
+            if (this.index === index) return
+            this.index = index
             this.$emit('nav', index)
         },
     },

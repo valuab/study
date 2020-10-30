@@ -11,7 +11,7 @@
         <Selected @contentIds="contentIds" />
         <KolList />
         <NavTag :tagList='tagList' @nav='nav' />
-        <articleList :url="url" :param="params" />
+        <ArticleList :url="url" :param="params[0]" />
     </div>
     <div class="home_right"></div>
 </div>
@@ -23,7 +23,7 @@ import Banner from "@/components/Home/Banner.vue";
 import Selected from "@/components/Home/Selected.vue";
 import KolList from "@/components/Home/KolList.vue";
 import NavTag from "@/components/nav/nav.vue";
-import articleList from "@/components/articleList/articleList.vue";
+import ArticleList from "@/components/articleList/articleList.vue";
 export default {
     name: "Home",
     components: {
@@ -31,7 +31,7 @@ export default {
         Selected,
         KolList,
         NavTag,
-        articleList,
+        ArticleList,
     },
     data() {
         return {

@@ -1,15 +1,16 @@
-.nav{
+.nav {
     display: flex;
-    line-height: 72px;
     height: 72px;
 
-    position: relative;
-    font-size: 1.5rem;
-    margin-right: 32px;
-    line-height: inherit;
+    &>div {
+        font-size: 1.5rem;
+        margin-right: 32px;
+        line-height: 72px;
+        position: relative;
+    }
 }
 
-.choice::before{
+.choice::before {
     content: '';
     position: absolute;
     bottom: 8px;
