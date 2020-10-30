@@ -1,5 +1,11 @@
+/*
+ * @Author: YJ
+ * @Date: 2020-08-31 14:33:32
+ * @
+# Description: 
+ */
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home/Home.vue'
+import Home from '@/views/Home/Home.vue' //引入方式
 
 const routes = [
   {
@@ -13,7 +19,12 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue') //引入方式
+  },
+  {
+    path: '/video',
+    name: 'Video',
+    component: () => import('@/views/video.vue')
   }
 ]
 

@@ -7,7 +7,7 @@
 <template>
 <div class="banner">
     <!-- 图片 -->
-    <div class="anchor" ref="anchors">
+    <div class="anchor" ref="anchors" @click="nato">
         <img v-for="item in bannerList" :key="item.id" :src="item.imageUrl" alt srcset class="poster" />
     </div>
     <!-- 文字 -->
@@ -116,6 +116,13 @@ export default {
                 console.log(res);
             });
         },
+
+        // nato() {
+        //     // 切换页面
+        //     this.$router.replace({
+        //         path: 'video'
+        //     })
+        // }
     },
 };
 </script>
