@@ -36,7 +36,7 @@ app.mixin({
 // 全局ctx(this) 上挂载 $axios
 app.config.globalProperties.$axios = axios
 
-// 3.x 实力api
+// 3.x 实例api
 
 
 // 注册插件

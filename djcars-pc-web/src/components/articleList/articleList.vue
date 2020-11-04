@@ -9,7 +9,7 @@
     <div class="list" v-for="item in articleList" :key="item.id">
         <div class="img">
             <img :src="item.imageUrl" alt="" srcset="">
-            <div class="link">{{item.columnContentDtoList[item.columnContentDtoList.lenght - 1].description}}</div>
+            <div class="link" v-if='item.categoryId == 10'>{{item.columnContentDtoList[item.columnContentDtoList.lenght - 1].description}}</div>
         </div>
         <div class="msg"></div>
     </div>
@@ -39,6 +39,7 @@ export default {
         getData() {
             this.page++
             this.PARAM.page = this.page
+            console.log(this.URL, this.PARAM)
             this.$axios.get(this.URL, this.PARAM).then((res) => {
                 let {
                     list

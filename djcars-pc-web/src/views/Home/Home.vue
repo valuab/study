@@ -11,7 +11,7 @@
         <Selected @contentIds="contentIds" />
         <KolList />
         <NavTag :tagList='tagList' @nav='nav' />
-        <ArticleList :url="url" :param="params[0]" />
+        <ArticleList :url="url" :param="params[0]" v-if="excludeContentIds.length" />
     </div>
     <div class="home_right"></div>
 </div>
@@ -24,8 +24,13 @@ import Selected from "@/components/Home/Selected.vue";
 import KolList from "@/components/Home/KolList.vue";
 import NavTag from "@/components/nav/nav.vue";
 import ArticleList from "@/components/articleList/articleList.vue";
+
+// mixin
+import myMixin from "@/assets/js/test.mixin.js"
+
 export default {
     name: "Home",
+    mixins: [myMixin],
     components: {
         Banner,
         Selected,
@@ -49,6 +54,7 @@ export default {
                     video: 1
                 },
             ],
+            excludeContentIds: new Array(),
             tagList: ["全部", "图文", "视频"]
         };
     },
@@ -62,6 +68,10 @@ export default {
             for (let i in this.params) {
                 this.params[i].excludeContentIds = val
             }
+
+            console.log(this.params)
+
+            this.excludeContentIds = val
         },
         nav(e) {
             console.log(e)
