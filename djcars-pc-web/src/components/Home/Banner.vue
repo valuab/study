@@ -117,12 +117,12 @@ export default {
             });
         },
 
-        // nato() {
-        //     // 切换页面
-        //     this.$router.replace({
-        //         path: 'video'
-        //     })
-        // }
+        nato() {
+            // 切换页面
+            this.$router.replace({
+                path: 'video'
+            })
+        }
     },
 };
 </script>

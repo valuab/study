@@ -5,8 +5,7 @@
 # Description:
 -->
 <template lang="">
-<div>
-    video
+<div class='video'>
 </div>
 </template>
 
@@ -20,10 +19,16 @@ export default {
         return {};
     },
 };
-
-// const stack = {
-//     render() {
-//         return h('div')
-//     }
-// }
 </script>
+
+<style lang="scss" scoped>
+.video {
+    width: 400px;
+    height: 400px;
+    box-sizing: border-box;
+    border-right: auto #666666 solid;
+    border-top: 100px #666666 solid;
+    border-left: auto #666666 solid;
+    border-bottom: 100px #666666 solid;
+}
+</style>
