@@ -4,7 +4,7 @@
  * @
 # Description: 
  */
-const head = 'api'
+const head = process.env.NODE_ENV === 'production' ? 'http://www.djcars.cn' : 'api'
 
 const api = {}
 

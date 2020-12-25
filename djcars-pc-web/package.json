@@ -4,16 +4,15 @@
   "private": true,
   "scripts": {
     "clean": "rimraf dist/*",
-    "serve": "vue-cli-service serve && webpack-dev-server --open",
+    "serve": "cross-env NODE_ENV=production && vue-cli-service serve && webpack-dev-server --open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "npm run serve",
-    "live": "live-server ./dist --proxy=ROUTE:https://djcars.cn"
+    "live": "live-server ./dist --open"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
-    "live-server": "^1.2.1",
     "node-sass": "^4.14.1",
     "sass-loader": "^10.0.1",
     "vue": "^3.0.0-0",
@@ -27,6 +26,7 @@
     "@vue/cli-service": "^4.5.0",
     "@vue/compiler-sfc": "^3.0.0-0",
     "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
     "webpack-dev-server": "^3.11.0"
@@ -37,7 +37,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
+      "plugin:vue/vue3-essential", 
       "eslint:recommended"
     ],
     "parserOptions": {
